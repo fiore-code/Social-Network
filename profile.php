@@ -2,6 +2,13 @@
 include('./classes/DB.php');
 include('./classes/Login.php');
 
+if (Login::isLoggedIn()) {
+        echo 'Logged In';
+        echo Login::isLoggedIn();
+} else {
+        die('Not logged in');
+}
+
 $username = "";
 $isFollowing = False;
 if (isset($_GET['username'])) {
